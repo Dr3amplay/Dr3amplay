@@ -1,191 +1,80 @@
-*{
+body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto",sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(72deg, #3DEBB0 1%, #8956F3 99%);
 }
 
-body{
-    background-color: #e3f0ff;
-    max-width: 2440px;
-    margin: 0 auto;
-    padding: 0 4%;
+.content{
+    height: 520px;
+    width: 935px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-nav{
+.navegation{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
 }
 
-nav .menu-icon{
+.bar{
+    width: 70px;
+    height: 17px;
+    border: 2px solid #fff;
+    margin: 6px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: .6s;
+}
+
+.bar:hover{
+    background-color: #fff;
+}
+
+input{
     display: none;
 }
 
-nav .logo{
-    font-size: 30px;
-    font-weight: bold;
-    color: #5654b3;
-    text-decoration: none;
-}
-
-nav ul{
+.slides{
     display: flex;
-    list-style: none;
-    align-items: center;
+    width: 500%;
+    height: 100%;
 }
 
-nav ul li{
-    padding: 0 15px;
+.slide {
+    width: 20%;
+    transition: .6s;
 }
 
-nav ul li a{
-    text-decoration: none;
-    font-size: 17px;
-    text-transform: uppercase;
-    color: #5654b3;
-}
-
-nav ul button{
-    border: none;
-    background-color: #5654b3;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    letter-spacing: 2px;
-    margin-left: 20px;
-    cursor: pointer;
-}
-
-main{
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.text-bx{
-    width: 40%;
-}
-
-.text-bx h1{
-    font-size: 3rem;
-    text-transform: uppercase;
-}
-
-.text-bx h1 b{
-    color: #f1676d;
-}
-
-.text-bx p{
-    color: #372c62;
-    font-weight: 400;
-    margin-top: 20px;
-}
-
-.text-bx .input-bx{
-    margin: 20px 0;
-    display: flex;
-}
-
-.text-bx .input-bx input{
-    width: 60%;
-    display: block;
-    height: 50px;
-    padding: 10px;
-    border: none;
-    outline: none;
-    color: #8997b9;
-    font-size: 16px;
-}
-
-.text-bx .input-bx input::placeholder{
-    color: #8997b9;
-}
-
-.text-bx .input-bx button{
-    outline: none;
-    border: none;
-    padding: 10px 20px;
-    background-color: #5654b3;
-    color: white;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-.medias-socias{
-    margin-top: 30px;
-}
-
-.medias-socias a{
-    text-decoration: none;
-
-}
-
-.medias-socias i{
-    font-size: 23px;
-    margin: 0 3px;
-    color: white;
-    background-color: #372c62;
-    padding: 7px;
-    border-radius: 5px;
-}
-
-.img-bx{
-    width: 60%;
-}
-.img-bx img{
+.slide img{
     width: 100%;
+    height: 100%;
 }
 
-@media (max-width:970px) {
-    nav .menu-icon{
-        display: block;
-    }
-    nav ul{
-        position: fixed;
-        width: 60%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        transform: translateX(-100%);
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        transition: 0.3s ease-in;
-        background-color: #5654b3;
-    }
-    nav ul.active{
-        transform: translateX(0);
-    }
-    nav ul li{
-        padding: 100%;
-    }
-    nav ul li a{
-        font-size: 18px;
-        color: white;
-    }
-    nav ul button{
-        background-color: #f1676d;
-        font-size: 18px;
-        margin: 10px;
-    }
-    main{
-        flex-direction: column;
-    }
-    .text-bx
-    .img-bx{
-        width: 100%;
-        text-align: center;
-    }
-    .text-bx{
-        margin-bottom: 40px;
-    }
-    .text-bx .input-bx{
-        justify-content: center;
-    }
+#slide1:checked ~ .s1{
+    margin-left: 0;
+}
+
+#slide2:checked ~ .s1{
+    margin-left: -20%;
+}
+
+#slide3:checked ~ .s1{
+    margin-left: -40%;
+}
+
+#slide4:checked ~ .s1{
+    margin-left: -60%;
+}
+
+#slide5:checked ~ .s1{
+    margin-left: -80%;
 }
